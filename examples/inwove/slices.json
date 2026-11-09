@@ -1,0 +1,366 @@
+{
+ "about": "The slices the run of 9 November 2026 actually used: names and sizes, not the reports. Made before scripts/make_manifests.py existed; running that script with sources.json gives nearly the same list (see README).",
+ "slice_count": 45,
+ "files": 4721,
+ "bytes": 76884456,
+ "slices": [
+  {
+   "slice": "inwove-room",
+   "group": "inwove-room",
+   "tier": 1,
+   "files": 190,
+   "bytes": 1658772
+  },
+  {
+   "slice": "starter",
+   "group": "starter",
+   "tier": 1,
+   "files": 419,
+   "bytes": 2073719
+  },
+  {
+   "slice": "weave-board",
+   "group": "weave-board",
+   "tier": 1,
+   "files": 79,
+   "bytes": 590816
+  },
+  {
+   "slice": "ts-apps",
+   "group": "ts-apps",
+   "tier": 1,
+   "files": 116,
+   "bytes": 1009076
+  },
+  {
+   "slice": "ts-utility",
+   "group": "ts-utility",
+   "tier": 1,
+   "files": 176,
+   "bytes": 1409666
+  },
+  {
+   "slice": "ts-p2p-1of2",
+   "group": "ts-p2p",
+   "tier": 1,
+   "files": 216,
+   "bytes": 1870172
+  },
+  {
+   "slice": "ts-p2p-2of2",
+   "group": "ts-p2p",
+   "tier": 1,
+   "files": 172,
+   "bytes": 1613317
+  },
+  {
+   "slice": "mediator-1of3",
+   "group": "mediator",
+   "tier": 1,
+   "files": 182,
+   "bytes": 2317520
+  },
+  {
+   "slice": "mediator-2of3",
+   "group": "mediator",
+   "tier": 1,
+   "files": 80,
+   "bytes": 2316420
+  },
+  {
+   "slice": "mediator-3of3",
+   "group": "mediator",
+   "tier": 1,
+   "files": 163,
+   "bytes": 1805416
+  },
+  {
+   "slice": "rltp-spec",
+   "group": "rltp-spec",
+   "tier": 1,
+   "files": 11,
+   "bytes": 1573640
+  },
+  {
+   "slice": "rltp-lib-1of3",
+   "group": "rltp-lib",
+   "tier": 1,
+   "files": 78,
+   "bytes": 1929220
+  },
+  {
+   "slice": "rltp-lib-2of3",
+   "group": "rltp-lib",
+   "tier": 1,
+   "files": 76,
+   "bytes": 1933648
+  },
+  {
+   "slice": "rltp-lib-3of3",
+   "group": "rltp-lib",
+   "tier": 1,
+   "files": 16,
+   "bytes": 1560158
+  },
+  {
+   "slice": "rltp-simulator",
+   "group": "rltp-simulator",
+   "tier": 2,
+   "files": 111,
+   "bytes": 1995836
+  },
+  {
+   "slice": "rltp-apps",
+   "group": "rltp-apps",
+   "tier": 2,
+   "files": 118,
+   "bytes": 1876777
+  },
+  {
+   "slice": "rltp-rest",
+   "group": "rltp-rest",
+   "tier": 1,
+   "files": 144,
+   "bytes": 1491000
+  },
+  {
+   "slice": "vti-rooms",
+   "group": "vti-rooms",
+   "tier": 1,
+   "files": 55,
+   "bytes": 1673856
+  },
+  {
+   "slice": "vti-specs-rooms",
+   "group": "vti-specs-rooms",
+   "tier": 1,
+   "files": 105,
+   "bytes": 1940577
+  },
+  {
+   "slice": "vti-docs-1of2",
+   "group": "vti-docs",
+   "tier": 1,
+   "files": 99,
+   "bytes": 2099124
+  },
+  {
+   "slice": "vti-docs-2of2",
+   "group": "vti-docs",
+   "tier": 1,
+   "files": 92,
+   "bytes": 1788575
+  },
+  {
+   "slice": "vti-clis-1of2",
+   "group": "vti-clis",
+   "tier": 1,
+   "files": 52,
+   "bytes": 1282905
+  },
+  {
+   "slice": "vti-clis-2of2",
+   "group": "vti-clis",
+   "tier": 1,
+   "files": 63,
+   "bytes": 1094196
+  },
+  {
+   "slice": "vti-edge",
+   "group": "vti-edge",
+   "tier": 1,
+   "files": 240,
+   "bytes": 1577705
+  },
+  {
+   "slice": "vti-ops",
+   "group": "vti-ops",
+   "tier": 1,
+   "files": 126,
+   "bytes": 1664738
+  },
+  {
+   "slice": "vta-service-1of5",
+   "group": "vta-service",
+   "tier": 2,
+   "files": 67,
+   "bytes": 2058599
+  },
+  {
+   "slice": "vta-service-2of5",
+   "group": "vta-service",
+   "tier": 2,
+   "files": 51,
+   "bytes": 1973913
+  },
+  {
+   "slice": "vta-service-3of5",
+   "group": "vta-service",
+   "tier": 2,
+   "files": 81,
+   "bytes": 2093503
+  },
+  {
+   "slice": "vta-service-4of5",
+   "group": "vta-service",
+   "tier": 2,
+   "files": 49,
+   "bytes": 2070622
+  },
+  {
+   "slice": "vta-service-5of5",
+   "group": "vta-service",
+   "tier": 2,
+   "files": 59,
+   "bytes": 1519043
+  },
+  {
+   "slice": "vtc-service-1of7",
+   "group": "vtc-service",
+   "tier": 2,
+   "files": 84,
+   "bytes": 2161079
+  },
+  {
+   "slice": "vtc-service-2of7",
+   "group": "vtc-service",
+   "tier": 2,
+   "files": 96,
+   "bytes": 2020168
+  },
+  {
+   "slice": "vtc-service-3of7",
+   "group": "vtc-service",
+   "tier": 2,
+   "files": 90,
+   "bytes": 2193319
+  },
+  {
+   "slice": "vtc-service-4of7",
+   "group": "vtc-service",
+   "tier": 2,
+   "files": 104,
+   "bytes": 2193013
+  },
+  {
+   "slice": "vtc-service-5of7",
+   "group": "vtc-service",
+   "tier": 2,
+   "files": 45,
+   "bytes": 2185713
+  },
+  {
+   "slice": "vtc-service-6of7",
+   "group": "vtc-service",
+   "tier": 2,
+   "files": 82,
+   "bytes": 2188447
+  },
+  {
+   "slice": "vtc-service-7of7",
+   "group": "vtc-service",
+   "tier": 2,
+   "files": 65,
+   "bytes": 1291428
+  },
+  {
+   "slice": "vta-sdk-1of2",
+   "group": "vta-sdk",
+   "tier": 2,
+   "files": 107,
+   "bytes": 2398698
+  },
+  {
+   "slice": "vta-sdk-2of2",
+   "group": "vta-sdk",
+   "tier": 2,
+   "files": 188,
+   "bytes": 2095272
+  },
+  {
+   "slice": "vti-common-1of2",
+   "group": "vti-common",
+   "tier": 2,
+   "files": 41,
+   "bytes": 1238250
+  },
+  {
+   "slice": "vti-common-2of2",
+   "group": "vti-common",
+   "tier": 2,
+   "files": 51,
+   "bytes": 1070386
+  },
+  {
+   "slice": "vta-parts-1of2",
+   "group": "vta-parts",
+   "tier": 2,
+   "files": 80,
+   "bytes": 1354325
+  },
+  {
+   "slice": "vta-parts-2of2",
+   "group": "vta-parts",
+   "tier": 2,
+   "files": 70,
+   "bytes": 1220740
+  },
+  {
+   "slice": "vti-governance",
+   "group": "vti-governance",
+   "tier": 2,
+   "files": 100,
+   "bytes": 1050543
+  },
+  {
+   "slice": "vti-root",
+   "group": "vti-root",
+   "tier": 1,
+   "files": 32,
+   "bytes": 360546
+  }
+ ],
+ "follow_ups": [
+  {
+   "slice": "vtc-service-3of7.a",
+   "why": "vtc-service-3of7 came back partial; cut with resplit.py at 0.75 MB and read again",
+   "files": 29,
+   "bytes": 789324
+  },
+  {
+   "slice": "vtc-service-3of7.b",
+   "why": "vtc-service-3of7 came back partial; cut with resplit.py at 0.75 MB and read again",
+   "files": 41,
+   "bytes": 804148
+  },
+  {
+   "slice": "vtc-service-3of7.c",
+   "why": "vtc-service-3of7 came back partial; cut with resplit.py at 0.75 MB and read again",
+   "files": 20,
+   "bytes": 599847
+  },
+  {
+   "slice": "inwove-room-2",
+   "why": "the first reader of the room skimmed its page and tests folders; a second reader read them"
+  },
+  {
+   "slice": "rltp-simulator.rest",
+   "why": "the simulator slice came back with about 31 files unread or partly read; a mop-up reader finished them"
+  },
+  {
+   "slice": "mop-up",
+   "why": "files three earlier reports marked partial (long test tails in vtc-service-4of7, parts of rltp-apps and rltp-lib-1of3)"
+  }
+ ],
+ "index_only_counts": {
+  "changelog/licence text": 71,
+  "lockfile": 23,
+  "generated API binding": 4,
+  "admin UI front-end": 409,
+  "schema bundle (non-rooms)": 756,
+  "asset": 2,
+  "superseded spec version": 344,
+  "test vector data": 32
+ },
+ "left_out": "One slice of a repository that is not public is left out of this list and of every count here."
+}

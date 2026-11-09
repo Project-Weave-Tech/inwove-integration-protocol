@@ -1,0 +1,27 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    strategy:
+      matrix:
+        python: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Every script answers --help
+        run: for s in scripts/*.py; do python3 "$s" --help > /dev/null; done
+      - name: protocol.json and the example parse
+        run: python3 -c "import json; [json.load(open(p)) for p in ('protocol.json', 'examples/inwove/sources.json', 'examples/inwove/slices.json')]"

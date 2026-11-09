@@ -1,0 +1,480 @@
+{
+ "run": {
+  "name": "inwove",
+  "date": "2026-11-09",
+  "protocol_version": "0.1.0",
+  "sources_dir": "sources",
+  "models": {
+   "coordinator": "opus",
+   "lead": "opus",
+   "reader": "sonnet",
+   "builder": "sonnet",
+   "helper_build": "sonnet",
+   "helper_check": "haiku"
+  }
+ },
+ "target": {
+  "name": "InWove",
+  "description": "a room server where people and their AI agents talk, propose and vote, with a signed public log",
+  "url": "https://inwove.org",
+  "repository": "the InWove room's repository",
+  "commit_read": "c4db8b10977efa92f3f9f6364dde7a0f159b5a1a",
+  "main_when_building": "49278fa",
+  "goal": "InWove works for real with every project listed here: end-to-end encrypted, decentralized, with no host in the middle holding people's keys.",
+  "done_test": [
+   "Private notebooks live in sealed rooms on a host the room does not run, and the shared talk lives in an encrypted community room.",
+   "A real person signs up from a wallet with keys they hold, gets a membership pass and enters the encrypted room.",
+   "Members of two different projects read each other in one MLS group.",
+   "The public log verifies with the room's server off.",
+   "The room's DID is on a permanent domain.",
+   "Agents keep working a full day with all of it in use."
+  ],
+  "rules": [
+   "Plain JavaScript ES modules, Node 22, no build step.",
+   "Code shared by the browser, the server and the agent bridge uses no Node-only and no browser-only APIs.",
+   "No new dependency unless the task cannot be done without it; ask first.",
+   "Every write that changes the room's state is a signed document.",
+   "Configuration and secrets come only from the environment, documented in .env.example and the README.",
+   "No personal names, accounts, tokens or private addresses in code, tests, docs or commits.",
+   "Test members and test keys only; where a choice would put a key or a decision on whoever hosts the room, leave it with the person.",
+   "Limits say what they protect. Logs and counters hold no content.",
+   "Build the measurement with the thing: something a person or agent can read that shows it working or failing, and why."
+  ],
+  "needs_a_person": [
+   "rules.json",
+   "package.json",
+   "package-lock.json",
+   ".github/",
+   "sandbox/",
+   "src/shared/rules.js",
+   "src/shared/guard.js",
+   "src/shared/types.js",
+   "src/shared/chain.js",
+   "src/shared/did.js",
+   "src/shared/crypto.js",
+   "src/server/actions.js",
+   "src/server/log.js",
+   "src/server/hosted.js",
+   "src/server/never.js",
+   "src/server/drafts.js"
+  ],
+  "out_of_scope": [
+   "running, building or installing any other project's code",
+   "pushing to any other project's repository",
+   "anything for projects other than the room"
+  ],
+  "commit_author": {
+   "name": "InWove contributors",
+   "email": "contributors@inwove.invalid"
+  },
+  "test_command": "npm test",
+  "single_test_command": "node --test test/<file>.test.js",
+  "security_reviewer": "a separate security reviewer, who answers the shape of a change before its code is written"
+ },
+ "sources": [
+  {
+   "name": "InWove",
+   "role": "target",
+   "repo": null,
+   "dir": "inwove-room",
+   "slug": "inwove-room",
+   "commit": "c4db8b10977efa92f3f9f6364dde7a0f159b5a1a",
+   "licence": "see the room's repository",
+   "read_as": "one slice, then a second reader for the page and the tests",
+   "groups": [
+    {
+     "name": "inwove-room",
+     "tier": 1,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "repo": "OpenVTC/verifiable-trust-infrastructure",
+   "url": "https://github.com/OpenVTC/verifiable-trust-infrastructure",
+   "slug": "vti",
+   "commit": "83ff0104e93347e0236b30555e2f0b85e2b031be",
+   "licence": "Apache-2.0",
+   "pins": [
+    {
+     "commit": "c6964c4612131089e1add0f47575894e1bd8a565",
+     "why": "the commit the room builds from; 10 commits older than the copy read"
+    }
+   ],
+   "groups": [
+    {
+     "name": "vti-rooms",
+     "tier": 1,
+     "paths": [
+      "room-host/",
+      "vti-rooms/",
+      "vti-rooms-dtg/",
+      "vti-rooms-wasm/"
+     ]
+    },
+    {
+     "name": "vti-specs-rooms",
+     "tier": 1,
+     "paths": [
+      "vti-specs/",
+      "vti-specs-core/",
+      "vti-specs-rooms/",
+      "vti-specs-vta/",
+      "vti-specs-vtc/",
+      "vti-specs-vtn/"
+     ]
+    },
+    {
+     "name": "vti-docs",
+     "tier": 1,
+     "paths": [
+      "docs/"
+     ]
+    },
+    {
+     "name": "vti-clis",
+     "tier": 1,
+     "paths": [
+      "cnm-cli/",
+      "pnm-cli/",
+      "vta-cli-common/"
+     ]
+    },
+    {
+     "name": "vti-edge",
+     "tier": 1,
+     "paths": [
+      "trust-tasks/",
+      "vta-mcp/",
+      "vta-webvh/",
+      "vtc-client/",
+      "vtc-mcp/",
+      "vti-mcp-common/",
+      "vti-oob-server/",
+      "vti-secrets/",
+      "vti-trust-task-server/",
+      "vti-webauthn/"
+     ]
+    },
+    {
+     "name": "vti-ops",
+     "tier": 1,
+     "paths": [
+      "deploy/",
+      "didcomm-test/",
+      "examples/",
+      "fuzz/",
+      "local-dev/",
+      "releases/",
+      "scripts/",
+      "tasks/",
+      "tests/"
+     ]
+    },
+    {
+     "name": "vta-service",
+     "tier": 2,
+     "paths": [
+      "vta-service/"
+     ]
+    },
+    {
+     "name": "vtc-service",
+     "tier": 2,
+     "paths": [
+      "vtc-service/"
+     ]
+    },
+    {
+     "name": "vta-sdk",
+     "tier": 2,
+     "paths": [
+      "vta-sdk/"
+     ]
+    },
+    {
+     "name": "vti-common",
+     "tier": 2,
+     "paths": [
+      "vti-common/"
+     ]
+    },
+    {
+     "name": "vta-parts",
+     "tier": 2,
+     "paths": [
+      "vta-audit/",
+      "vta-backup/",
+      "vta-config/",
+      "vta-enclave/",
+      "vta-external/",
+      "vta-keys/",
+      "vta-keyspaces/",
+      "vta-mobile-core/",
+      "vta-persona/",
+      "vta-policy/",
+      "vta-support/",
+      "vta-sweepers/",
+      "vta-tee/",
+      "vta-vault/"
+     ]
+    },
+    {
+     "name": "vti-governance",
+     "tier": 2,
+     "paths": [
+      "vti-vetting-pcs/",
+      "vti-voting/",
+      "vti-voting-service/",
+      "vti-vtn/",
+      "vti-witness/"
+     ]
+    },
+    {
+     "name": "vti-root",
+     "tier": 1,
+     "rest": true
+    }
+   ],
+   "index_only": [
+    {
+     "category": "admin UI front-end",
+     "patterns": [
+      "vtc-service/admin-ui/*"
+     ],
+     "reason": "a browser front-end over routes read in vtc-service; no interface of its own"
+    },
+    {
+     "category": "schema bundle (non-rooms)",
+     "patterns": [
+      "vti-specs-vtc/trust-tasks/*",
+      "vti-specs-core/trust-tasks/*",
+      "vti-specs-vta/trust-tasks/*",
+      "vti-specs-vtn/trust-tasks/*"
+     ],
+     "reason": "generated schema bundles; the rooms bundle and the code that serves each task were read"
+    },
+    {
+     "category": "generated API binding",
+     "patterns": [
+      "openapi.json"
+     ],
+     "reason": "generated from the routes, which were read"
+    }
+   ]
+  },
+  {
+   "repo": "affinidi/affinidi-messaging-mediator",
+   "url": "https://github.com/affinidi/affinidi-messaging-mediator",
+   "slug": "mediator",
+   "commit": "66d426b7365e8514d26c825146ae1c8973c66b15",
+   "licence": "Apache-2.0",
+   "pins": [
+    {
+     "commit": "e6e2c63654bb43bb7feb732834702cd940b2bcce",
+     "release": "0.48.0",
+     "why": "the room's main pinned this; it matches the starter kit, not the room's OpenVTC pin"
+    },
+    {
+     "commit": "34bbdea4717e3a8dd1fdb190ad9c2ad2b33a3316",
+     "release": "v0.50.0",
+     "why": "the release the room's OpenVTC pin goes with; the test host was moved to it"
+    }
+   ],
+   "groups": [
+    {
+     "name": "mediator",
+     "tier": 1,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "repo": "Mickens-Lab/openvti-starter",
+   "url": "https://github.com/Mickens-Lab/openvti-starter",
+   "slug": "starter",
+   "commit": "ca4f259c6049d12aa5a5030df249aa6c17ea25ef",
+   "licence": "Apache-2.0",
+   "groups": [
+    {
+     "name": "starter",
+     "tier": 1,
+     "rest": true
+    }
+   ],
+   "index_only": [
+    {
+     "category": "generated API binding",
+     "patterns": [
+      "wire.ts"
+     ],
+     "reason": "generated from the routes, which were read"
+    }
+   ]
+  },
+  {
+   "repo": "real-life-org/trust-protocol",
+   "url": "https://github.com/real-life-org/trust-protocol",
+   "slug": "rltp",
+   "commit": "48c5efb9f9d968dc746c52b6c77be7c706f723e0",
+   "licence": "Apache-2.0 for code, CC BY 4.0 for the specification",
+   "groups": [
+    {
+     "name": "rltp-spec",
+     "tier": 1,
+     "paths": [
+      "spec/"
+     ]
+    },
+    {
+     "name": "rltp-lib",
+     "tier": 1,
+     "paths": [
+      "lib/"
+     ]
+    },
+    {
+     "name": "rltp-simulator",
+     "tier": 2,
+     "paths": [
+      "simulator/"
+     ]
+    },
+    {
+     "name": "rltp-apps",
+     "tier": 2,
+     "paths": [
+      "apps/"
+     ]
+    },
+    {
+     "name": "rltp-rest",
+     "tier": 1,
+     "rest": true
+    }
+   ],
+   "index_only": [
+    {
+     "category": "superseded spec version",
+     "patterns": [
+      "spec/archive/*"
+     ],
+     "reason": "older versions of the specification; the current one was read"
+    },
+    {
+     "category": "test vector data",
+     "patterns": [
+      "vectors/*"
+     ],
+     "reason": "data the conformance code checks; the code that reads it was read"
+    },
+    {
+     "category": "generated API binding",
+     "patterns": [
+      "wire.ts"
+     ],
+     "reason": "generated, its source was read"
+    }
+   ]
+  },
+  {
+   "repo": "TrustStackers/p2p-trust-stack",
+   "url": "https://github.com/TrustStackers/p2p-trust-stack",
+   "slug": "ts-p2p",
+   "commit": "d7ebe8f2dc6cc1e7bbe4ff40d6debf2f9184b84c",
+   "licence": "GPL-3.0-only or commercial",
+   "groups": [
+    {
+     "name": "ts-p2p",
+     "tier": 1,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "repo": "TrustStackers/agent-app",
+   "url": "https://github.com/TrustStackers/agent-app",
+   "slug": "ts-agent-app",
+   "commit": "29499ce806fb902231786ec6809648d51f481b41",
+   "licence": "GPL-3.0-only or commercial",
+   "groups": [
+    {
+     "name": "ts-apps",
+     "tier": 1,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "repo": "TrustStackers/agent-app-mobile",
+   "url": "https://github.com/TrustStackers/agent-app-mobile",
+   "slug": "ts-agent-app-mobile",
+   "commit": "3eab73a085c29970358065df07b5b3a18e8044c0",
+   "licence": "GPL-3.0-only or commercial",
+   "groups": [
+    {
+     "name": "ts-apps",
+     "tier": 1,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "repo": "TrustStackers/bootstrap",
+   "url": "https://github.com/TrustStackers/bootstrap",
+   "slug": "ts-bootstrap",
+   "commit": "f7f7132caddc2c1ee4aab55a28471972501b9a0e",
+   "licence": "AGPL-3.0-only or commercial",
+   "groups": [
+    {
+     "name": "ts-apps",
+     "tier": 1,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "repo": "TrustStackers/utility-server",
+   "url": "https://github.com/TrustStackers/utility-server",
+   "slug": "ts-utility",
+   "commit": "3ccb8550ae86fb3d94050387ab7eaf124a69c3ec",
+   "licence": "AGPL-3.0-only or commercial",
+   "groups": [
+    {
+     "name": "ts-utility",
+     "tier": 1,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "repo": "Project-Weave-Tech/dtg-interop",
+   "url": "https://github.com/Project-Weave-Tech/dtg-interop",
+   "slug": "weave-board",
+   "commit": "af997a1355ca88214b3e35b9f002147c16a40046",
+   "licence": "CC BY 4.0 for documents and data, MIT for code",
+   "groups": [
+    {
+     "name": "weave-board",
+     "tier": 1,
+     "rest": true
+    }
+   ]
+  },
+  {
+   "repo": "Project-Weave-Tech/interopathon",
+   "url": "https://github.com/Project-Weave-Tech/interopathon",
+   "slug": "interopathon",
+   "commit": "732c0d9e763dbd0419926539b7d5defed41e5cf8",
+   "licence": "none stated; ask its authors before reusing anything",
+   "groups": [
+    {
+     "name": "weave-board",
+     "tier": 1,
+     "rest": true
+    }
+   ]
+  }
+ ],
+ "note": "One further repository was read in the run. Its owners share it with invited reviewers only, so it is not listed here, and nothing from it appears in this repository."
+}
