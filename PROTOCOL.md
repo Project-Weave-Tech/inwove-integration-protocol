@@ -165,6 +165,7 @@ decisions that belong to a person. Anyone can continue from it.
 | The budget ran short mid-build | principle 11: stop, commit, write the rest as small jobs |
 | Two branches each passed their tests and failed together: one had tested against a stand-in for the other's code, and the stand-in differed where it mattered | at integration a stand-in for your own code is removed and the tests run on the real piece; a review reads the joined code, not only each branch |
 | A check passed because it ran two services on one machine, and the real host runs them on two | beside every check, say what it cannot see (here: rules about what may cross between machines) |
+| A path from one contributor's machine reached a public branch: a helper wrote it as a test default, and the scan for such things ran in the same step as the push | the scan is its own step and the push runs only when it comes back empty; a test that needs local files reads their folder from a setting and skips without it |
 | A reviewer's condition was met in a different way than it was asked | report every difference with its reason, and get the answer before pushing |
 
 ## 9. Changing this protocol
