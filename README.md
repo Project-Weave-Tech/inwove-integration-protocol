@@ -46,7 +46,8 @@ separate security reviewer answers the shape of anything that widens what the pr
 
 ## Run it on your own project
 
-Python 3.9 or newer, nothing to install.
+Python 3, nothing to install. The check runs the scripts on Python 3.12 and on the newest release; they use nothing
+newer than 3.9, but no older release has been tried.
 
 ```sh
 # 1. Describe the run. Start from the example and edit it: target, rules, sources, groups.
