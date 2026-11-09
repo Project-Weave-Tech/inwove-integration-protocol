@@ -163,6 +163,8 @@ decisions that belong to a person. Anyone can continue from it.
 | A specification in the source list turned out not to be public | name it, cite nothing from it in public, get permission before using it |
 | The target's main moved during the work, and another contributor had proven a fix to the same files | start from the current main; build on the proven fix |
 | The budget ran short mid-build | principle 11: stop, commit, write the rest as small jobs |
+| Two branches each passed their tests and failed together: one had tested against a stand-in for the other's code, and the stand-in differed where it mattered | at integration a stand-in for your own code is removed and the tests run on the real piece; a review reads the joined code, not only each branch |
+| A check passed because it ran two services on one machine, and the real host runs them on two | beside every check, say what it cannot see (here: rules about what may cross between machines) |
 | A reviewer's condition was met in a different way than it was asked | report every difference with its reason, and get the answer before pushing |
 
 ## 9. Changing this protocol

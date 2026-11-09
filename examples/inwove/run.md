@@ -24,7 +24,8 @@ Held against their code:
 
 ## What was built
 
-All on branches of the room's repository, each with tests beside it. None was pushed when this was written.
+All on branches of the room's repository, each with tests beside it. When this was written they were open as two
+pull requests, not yet merged.
 
 - **A shared base:** the standard signed task document the other projects use for everything remote (shape,
   proof, freshness, replies, refusals).
@@ -48,12 +49,27 @@ All on branches of the room's repository, each with tests beside it. None was pu
 - Nothing in the other projects' languages was built or run; the test host's first real build is its first run in
   the room's checks.
 - Every interop claim is proven only against stand-ins. Each has a live check, skipped until a real service exists.
-- Joining a community as a member (asking for a pass, not only reading one) is designed, not built.
-- One encrypted group across projects needs a group-encryption library the room does not have yet, or each
-  member's own trust agent doing that part; it is designed, not built.
+- Joining a community as a member (asking for a pass, not only reading one) was designed in the run and was being
+  built when this was written.
+- One encrypted group across projects: the design found that the room needs no group-encryption code of its own.
+  Each member's own trust agent does that part, and the room's agent bridge only carries an offer, a key package
+  and a welcome between it and the community. It was being built when this was written.
 - In-person exchange with one project, and transport to another whose own wire has no door on the room's side,
   are not built. The second needs that project's team in the room for a run.
 - The room is not yet listed on the projects' shared interop board; its entry is drafted for the room to propose.
 - Three different addresses are in use across the projects for the same credential vocabulary. The room reads all
   three and says which; the projects need to agree on one.
 - Who may use the test relay, and how they are let in, is a decision for the security reviewer and the owner.
+
+## What the review found
+
+A review lead read the branches before they were joined. Its three serious findings all appeared only once two
+branches met: wallet sign-in had been tested against a stand-in for the room's own door, and the stand-in differed
+from the real door on exactly the points that mattered, so every sign-in would have failed. The fix was small. The
+rule it left is in `PROTOCOL.md`: a stand-in for your own code is removed when the real piece is merged, and the
+tests run on the real piece.
+
+The test host had the same shape of problem one level up. Its check boots the trust agent and the community on one
+machine, so it could not see that the community refuses a plain `http://` address for a trust agent on another
+machine. A check that runs everything in one place cannot see rules about what may cross between places; say so
+beside the check.

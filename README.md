@@ -104,7 +104,8 @@ What was not verified:
   room's checks.
 - Every interop claim is proven only against stand-ins. A live check exists for each, skipped until a real service
   is there. None had run when this was written, so nothing here says the room works with any project yet.
-- At the time of writing, the room's branches were local and waiting for the owner's yes to push.
+- When this was written the work was open as two pull requests on the room's repository, not yet merged, and the
+  test host's first real build was running in that pull request's checks.
 - The scripts in this repository were written after the run, from the run's own scripts and rules. They are tested
   here and against the run's files, but no run has yet been driven by them from the start.
 - `examples/inwove/run.md` lists what was built and what is still unbuilt.
