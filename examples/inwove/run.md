@@ -46,8 +46,9 @@ pull requests, not yet merged.
 
 ## What is still unbuilt or unverified
 
-- Nothing in the other projects' languages was built or run; the test host's first real build is its first run in
-  the room's checks.
+- Nothing in the other projects' languages was built or run during the run itself. The test host's first real
+  build and boot came afterwards, in its pull request's checks, and passed; that check runs everything on one
+  machine.
 - Every interop claim is proven only against stand-ins. Each has a live check, skipped until a real service exists.
 - Joining a community as a member (asking for a pass, not only reading one) was designed in the run and was being
   built when this was written.

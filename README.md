@@ -105,8 +105,11 @@ What was not verified:
   room's checks.
 - Every interop claim is proven only against stand-ins. A live check exists for each, skipped until a real service
   is there. None had run when this was written, so nothing here says the room works with any project yet.
-- When this was written the work was open as two pull requests on the room's repository, not yet merged, and the
-  test host's first real build was running in that pull request's checks.
+- When this was written the work was open as pull requests on the room's repository, not yet merged. The test
+  host's first real build and boot passed in its pull request's checks: the trust agent, the community, the relay
+  and the proxy were built from source, the relay started closed and refused every setting that would open it, and
+  the trust agent and the community started together and answered the room's code. That check runs everything on
+  one machine, so it does not show the services working across machines.
 - The scripts in this repository were written after the run, from the run's own scripts and rules. They are tested
   here and against the run's files, but no run has yet been driven by them from the start.
 - `examples/inwove/run.md` lists what was built and what is still unbuilt.
