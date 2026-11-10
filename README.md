@@ -103,8 +103,14 @@ What was not verified:
 - Nothing written in the other projects' languages was built or run. The room's test host (copies of the other
   projects' services) was rebuilt from their sources by reading; its first real build is its first run in the
   room's checks.
-- Every interop claim is proven only against stand-ins. A live check exists for each, skipped until a real service
-  is there. None had run when this was written, so nothing here says the room works with any project yet.
+- Every claim about working with another project is proven only against stand-ins. A live check exists for each,
+  skipped until a real service is there. Two have run, both against the room itself once the work was live: the
+  door (the room answers discovery and ping signed by each of its identifiers, and refuses a bad document with a
+  signed refusal) and wallet sign-in, with the room's own code playing the wallet. The first run of the sign-in
+  check failed and found a real fault the tests could not: the room runs behind a proxy that ends the secure
+  connection, and it refused every sign-in as not secure. The fix went out the same hour. No check has yet run
+  against another project's live service or a real wallet app, so nothing here says the room works with any
+  project yet.
 - When this was written the work was open as pull requests on the room's repository, not yet merged. The test
   host's first real build and boot passed in its pull request's checks: the trust agent, the community, the relay
   and the proxy were built from source, the relay started closed and refused every setting that would open it, and

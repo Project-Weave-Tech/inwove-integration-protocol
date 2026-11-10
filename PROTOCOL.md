@@ -166,6 +166,7 @@ decisions that belong to a person. Anyone can continue from it.
 | Two branches each passed their tests and failed together: one had tested against a stand-in for the other's code, and the stand-in differed where it mattered | at integration a stand-in for your own code is removed and the tests run on the real piece; a review reads the joined code, not only each branch |
 | A check passed because it ran two services on one machine, and the real host runs them on two | beside every check, say what it cannot see (here: rules about what may cross between machines) |
 | A path from one contributor's machine reached a public branch: a helper wrote it as a test default, and the scan for such things ran in the same step as the push | the scan is its own step and the push runs only when it comes back empty; a test that needs local files reads their folder from a setting and skips without it |
+| The first live check failed on the real host: a rule about who a caller is had been written for one hosting platform, guessed from a file in the repository, and the real room runs on another, behind a proxy | a fact about where the target runs is a fact like any other: find it before building on it; and run the live checks the hour the work lands, before calling it done |
 | A reviewer's condition was met in a different way than it was asked | report every difference with its reason, and get the answer before pushing |
 
 ## 9. Changing this protocol
